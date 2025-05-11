@@ -446,14 +446,6 @@ export const scheduleReponse = {
     ],
     assignments: [
       {
-        id: "7f7a71ca-d828-4f88-9a7f-051acf93697b",
-        staffId: "6a003ce0-f3e4-43e4-9f3d-f8850297ffa8",
-        shiftId: "1d8bd052-3750-4d5d-bdaa-70055737a2f0",
-        shiftStart: "2025-10-06T08:30:00.000Z",
-        shiftEnd: "2025-10-06T12:00:00.000Z",
-        isUpdated: false,
-      },
-      {
         id: "28682f49-1f06-4b51-acb6-fd21e63a3599",
         staffId: "6a003ce0-f3e4-43e4-9f3d-f8850297ffa8",
         shiftId: "1d8bd052-3750-4d5d-bdaa-70055737a2f0",

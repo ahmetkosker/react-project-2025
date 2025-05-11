@@ -1,7 +1,7 @@
 import type { AxiosResponse } from 'axios';
 import type { PutEffect, CallEffect } from 'redux-saga/effects';
 
-export interface Callbacks<R = any, E = any> {
+export interface Callbacks<R = unknown, E = ErrorBE> {
   onSuccess?: (response?: R) => void;
   onError?: (err: E) => void;
   onLoadEnd?: () => void;
@@ -15,6 +15,6 @@ export type APIError = {
 
 export type SagaReturnType<T> = Generator<PutEffect | CallEffect<AxiosResponse<T>>>;
 
-export type ResponseBE = any;
+export type ResponseBE = unknown;
 
 export type ID = string | number;

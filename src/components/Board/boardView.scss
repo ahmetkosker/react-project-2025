@@ -1,0 +1,140 @@
+.board-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #f9fafb;
+}
+
+.board-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.board-columns {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 24px 0;
+  
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #19979c;
+    border-radius: 10px;
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+    background: #148389;
+  }
+}
+
+.event-details-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tag-menu {
+  position: fixed;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  padding: 12px;
+  z-index: 10000;
+  min-width: 160px;
+  
+  .tag-item {
+    padding: 5px 8px;
+    margin: 4px 0;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+    &:hover {
+      background-color: #f5f5f5;
+    }
+    
+    .tag-color {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    
+    &.selected {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+}
+
+.board-card {
+  background: #f5f7fa;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(25,151,156,0.07);
+  margin-bottom: 12px;
+  padding: 12px 10px;
+  cursor: grab;
+  transition: box-shadow .2s;
+  
+  &:hover {
+    box-shadow: 0 4px 10px rgba(25,151,156,0.1);
+  }
+  
+  .card-title {
+    font-size: 1rem;
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+  
+  .card-time {
+    font-size: 0.95rem;
+    color: #666;
+  }
+  
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 6px;
+    
+    .card-tag {
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    
+    .add-tag-btn {
+      background: transparent;
+      border: 1px dashed #ccc;
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-size: 10px;
+      cursor: pointer;
+      color: #888;
+      
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+} 

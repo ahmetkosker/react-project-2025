@@ -4,3 +4,54 @@
   flex-direction: column;
   overflow: hidden;
 }
+
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.app-tabs {
+  display: flex;
+  background-color: #fff;
+  padding: 0 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.app-tabs button {
+  padding: 16px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: #5f6368;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.app-tabs button:hover {
+  background-color: #f1f3f4;
+  color: #1a73e8;
+}
+
+.app-tabs button.active {
+  color: #1a73e8;
+  border-bottom: 3px solid #1a73e8;
+}
+
+.app-content {
+  flex: 1;
+  overflow: auto;
+  background-color: #f8f9fa;
+}

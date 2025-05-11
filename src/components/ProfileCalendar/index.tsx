@@ -21,14 +21,20 @@ const ProfileCalendar = () => {
   const schedule = useSelector(getSchedule);
 
   useEffect(() => {
-    dispatch(setProfile() as any);
-    dispatch(fetchSchedule() as any);
+    const loadData = async () => {
+      await dispatch(setProfile() as any);
+      await dispatch(fetchSchedule() as any);
+    };
+    
+    loadData();
   }, []);
 
   return (
     <div className="profile-calendar-container">
       <ProfileCard profile={auth} />
-      <CalendarContainer schedule={schedule} auth={auth} />
+      {schedule && Object.keys(schedule).length > 0 && (
+        <CalendarContainer schedule={schedule} auth={auth} />
+      )}
     </div>
   );
 };

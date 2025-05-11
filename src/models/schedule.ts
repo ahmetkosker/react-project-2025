@@ -1,45 +1,51 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-export type ScheduleInstance = {
-  scheduleStartDate: string;
-  scheduleEndDate: string;
-  scheduleId: string;
+export interface Staff {
+  id: string;
   name: string;
-  approveStatus: "NOT_SUBMITTED" | "PENDING_APPROVAL" | "APPROVED" | "REJECTED";
-  rejectReason: string;
-  groups: Array<{
-    id: string;
-    name: string;
-  }>;
-  shifts: Array<{
-    id: string;
-    shiftStart: string;
-    shiftEnd: string;
-    isEndFollowingDay: boolean;
-    shiftRule: string;
-    point: number;
-    name: string;
-    requiredPersonnel: any;
-  }>;
-  staffs: Array<{
-    id: string;
-    name: string;
-    workhours: any;
-    group: string;
-    offDays: string[];
-    isDepartmentStaff: boolean;
-    payRates: {
-      weekdayRate: number;
-      weekendRate: number;
-      holidayRate: number;
-    };
-    pairList?: any[];
-  }>;
-  assignments: Array<{
-    id: string;
-    staffId: string;
-    shiftId: string;
-    shiftStart: string;
-    shiftEnd: string;
-    isUpdated: boolean;
-  }>;
-};
+  pairList?: {
+    partnerId: string;
+    startDate: string;
+    endDate: string;
+  }[];
+  offDays?: string[];
+}
+
+export interface Shift {
+  id: string;
+  name: string;
+  startTime: string;
+  endTime: string;
+  color?: string;
+}
+
+export interface Reminder {
+  id: string;
+  time: number; 
+  type: 'notification' | 'email';
+}
+
+export interface Assignment {
+  id: string;
+  staffId: string;
+  shiftId: string;
+  shiftStart: string;
+  shiftEnd: string;
+  isUpdated: boolean;
+  title?: string;
+  location?: string;
+  description?: string;
+  isRecurring?: boolean;
+  recurrenceRule?: string;
+  reminders?: Reminder[];
+  tags?: string[];
+}
+
+export interface ScheduleInstance {
+  id: string;
+  name: string;
+  startDate: string;
+  endDate: string;
+  staffs: Staff[];
+  shifts: Shift[];
+  assignments: Assignment[];
+}
